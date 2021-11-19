@@ -1,0 +1,38 @@
+
+html,body{
+    margin: 0;
+}
+
+body{
+    font-family: 'Special Elite', cursive;
+    background-color: rgb(114, 252, 110);
+}
+
+main h2{
+    text-align: center;
+}
+.formclass{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.plantdetails{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center
+}
+
+.submitbutton{
+    border: none;
+    background-color: white;
+    color: black;
+}

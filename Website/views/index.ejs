@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name='viewport' content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+        <title>Crop Identifier</title>
+    </head>
+
+    <body>
+        <header>
+            <h1>Crop Identifier</h1>
+        </header>
+
+        <main>
+            <h2>Wanna know about a plant!! Upload a picture here</h2>
+            <form class="formclass" enctype="multipart/form-data" action="" method="post"> 
+                <p><input type="file"  accept="image/*" name="image" id="image"  onchange="loadFile(event)" style="display: none;"></p>
+                <p><label for="image" style="cursor: pointer;">Upload Image</label></p>
+                <input class="submitbutton" type="submit" value="Submit">
+            </form>
+            <p><img id="output" width="200"/></p>
+            <% if (message) { %>
+            <div>
+                <h3><%= message%></h3>
+            </div>
+            <% } %>
+            
+            <% if (result) { %>
+            <div class="plantdetails">
+                <h3>Fruit Name: <%= result[0] %></h3>
+                <h3>For more Insights: <a href=<%= result[1] %> > <%= result[0] %> </a></h3>
+            </div>
+            <% } %>
+
+            <script>
+                var loadFile = function(event) {
+	            var image = document.getElementById('output');
+	            image.src = URL.createObjectURL(event.target.files[0]);
+                };
+            </script>
+        </main>
+    </body>
+</html>
